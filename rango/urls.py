@@ -5,6 +5,8 @@ app_name = 'rango'
 urlpatterns = [
 path('', views.index, name='index'),
 path('about/', views.about, name='about'),
-
+path('category/<slug:category_name_slug>/',
+views.show_category, name='show_category'),
 ]
+
 # URL mappings can employ reverse URL matching. That is we can reference the URL mapping by name rather than by the URL

@@ -13,7 +13,22 @@
         <div>
             hey there partner! <br />
             <strong>{{ boldmessage }}</strong><br />
+        
         </div>
+
+        <div>
+        {% if categories %}
+            <ul>
+            {% for category in categories %}
+                <li>{{ category.name }}</li> #list element
+            {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+        </div>
+        {# All template commands are enclosed within {% ... %}, while variables are referenced with {{ ... }} #}
+
         <div>
             <a href="/rango/about/">About</a><br />
             <img src="{% static 'images/rango.jpg' %}"
