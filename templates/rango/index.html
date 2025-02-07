@@ -20,9 +20,14 @@
         {% if categories %}
             <ul>
             {% for category in categories %}
-                <li>{{ category.name }}</li> #list element
+                <li>
+                    <!-- The following line is changed to add an HTML hyperlink -->
+                    <a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a>
+                </li> 
             {% endfor %}
-            </ul>
+            </ul> <!--ul to define unordered list. 
+            within list, create serries of list elements which contains an HTML hyperlink
+            hyperlink has hrref attribute which we use to specify target url defined by /rango/category/{{ category.slug }}-->
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
