@@ -125,7 +125,7 @@ PASSWORD_HASHERS = (
 )
 
 
-
+LOGIN_URL = 'rango:login'
 
 
 
