@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Rango
+    Homepage
 {% endblock %}
 
 {% block body_block %}
@@ -20,7 +20,7 @@
 
         <ul>
         {% for category in categories %}
-            <li><a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a></li> 
+<li><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>         
         {% endfor %}
         </ul> <!--ul to define unordered list. 
         within list, create serries of list elements which contains an HTML hyperlink
@@ -41,7 +41,7 @@
             <ul>
             {% for page in pages %}
                 <li>
-                    <a href="{{ page.url }}">{{ page.title }}</a>
+                    <a href="{% url 'rango:show_category' page.category.slug %}">{{ page.title }}</a>
                 </li>
             {% endfor %}
             </ul> <!--ul to define unordered list. 
