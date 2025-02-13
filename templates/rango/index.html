@@ -27,10 +27,7 @@
         {% for category in categories %}
 <li><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>         
         {% endfor %}
-        </ul> <!--ul to define unordered list. 
-        within list, create serries of list elements which contains an HTML hyperlink
-        hyperlink has hrref attribute which we use to specify target url defined by /rango/category/{{ category.slug }}-->
-
+        </ul> 
         
     {% else %}
         <strong>There are no categories present.</strong>
@@ -50,9 +47,7 @@
                     <a href="{% url 'rango:show_category' page.category.slug %}">{{ page.title }}</a>
                 </li>
             {% endfor %}
-            </ul> <!--ul to define unordered list. 
-            within list, create serries of list elements which contains an HTML hyperlink
-            hyperlink has hrref attribute which we use to specify target url defined by /rango/category/{{ category.slug }}-->
+            </ul> 
         {% else %}
             <strong>There are no pages present.</strong>
         {% endif %}
@@ -61,7 +56,7 @@
     <div>
 
         <img src="{% static 'images/rango.jpg' %}"
-        alt="Picture of Rango" /> <!-- New line -->
+        alt="Picture of Rango" /> 
     </div>
 
 

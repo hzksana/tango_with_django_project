@@ -7,13 +7,11 @@ class Category(models.Model):
     name = models.CharField(max_length=Name_Max_Length, unique=True)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    slug = models.SlugField(unique=True) # slugfield is unique (Django and django is different)
+    slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
-        #slugify replaces whitespace with hyphens , circumnavigating the percent-encoded problem
-        #overidden save method calls parent save method in base django.db.models.Model
     class Meta:
         verbose_name_plural = 'categories'
     
@@ -33,10 +31,7 @@ class Page(models.Model):
         return self.title
     
 class UserProfile(models.Model):
-    # This line is required. Links UserProfile to a User model instance.
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
-    # The additional attributes we wish to include.
     website = models.URLField(blank=True)
     
     picture = models.ImageField(upload_to='profile_images', blank=True)

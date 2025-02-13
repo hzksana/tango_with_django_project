@@ -14,10 +14,3 @@ path('restricted/', views.restricted, name='restricted'),
 path('logout/', views.user_logout, name='logout'),
 
 ]
-#<a href="{% url 'rango:about' %}">About</a>
-#colon in url separates namespace from actual URL name
-
-#<a href="{% url 'about' %}">About</a>
-#if appname not specified, reference a URL with just name of mapping you want to refer to
-
-# URL mappings can employ reverse URL matching. That is we can reference the URL mapping by name rather than by the URL
